@@ -1,0 +1,3 @@
+# Copy to inventory/devices.yaml (ignored by git) and replace documentation IP.
+switch-demo:
+  host: 192.0.2.10

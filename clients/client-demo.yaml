@@ -1,0 +1,25 @@
+hostname: SW-CLIENT-DEMO-01
+vlans:
+  - {id: 10, name: USERS}
+  - {id: 20, name: VOICE}
+  - {id: 30, name: GUEST}
+  - {id: 99, name: MANAGEMENT}
+  - {id: 999, name: NATIVE_UNUSED}
+management:
+  vlan: 99
+  address: 192.0.2.10/24
+  gateway: 192.0.2.1
+interfaces:
+  - name: GigabitEthernet1/0/1
+    description: OFFICE_PC_01
+    mode: access
+    vlan: 10
+  - name: GigabitEthernet1/0/2
+    description: GUEST_PORT_01
+    mode: access
+    vlan: 30
+  - name: GigabitEthernet1/0/24
+    description: UPLINK_TO_CORE
+    mode: trunk
+    native_vlan: 999
+    allowed_vlans: [10, 20, 30, 99, 999]
